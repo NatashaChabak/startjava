@@ -6,18 +6,18 @@ public class VariablesTheme {
         short memoryLimit = 6242;
         int memorySize = 16127;
         System.out.println("Число процессоров " + processorNumber + 
-        "\nДоступная физическая память, МБ " + memoryLimit + 
-        "\nПолный объем физической памяти, МБ " + memorySize);
+                "\nДоступная физическая память, МБ " + memoryLimit + 
+                "\nПолный объем физической памяти, МБ " + memorySize);
         long virtualMemory = 21_036l;
         float procMemoryUsage = 85.814f;
         double procFreeMemory = 14.185_206_312_987_259d;
         System.out.println("Виртуальная память: Макс. размер,МБ " + virtualMemory + 
-        "\nВиртуальная память: Используется, % " + procMemoryUsage + 
-        "\nВиртуальная память: Доступнo, % " + procFreeMemory);
+                "\nВиртуальная память: Используется, % " + procMemoryUsage + 
+                "\nВиртуальная память: Доступнo, % " + procFreeMemory);
         char domainName = 'A';
         boolean availableHyperV = true;
         System.out.println("Домен " + domainName + 
-        "\nРасширения режима мониторинга виртуальной машины " + availableHyperV);
+                "\nРасширения режима мониторинга виртуальной машины " + availableHyperV);
 
         System.out.println("\n2. Расчет стоимости товара со скидкой");
         int penPrice = 100;
@@ -42,17 +42,17 @@ public class VariablesTheme {
         int intMax = 2_147_483_647;
         long longMax = Long.MAX_VALUE;
         System.out.println("byte. Первоначальное значение " + byteMax + 
-        "; значение после инкремента " + (++byteMax) + 
-        "; значение после декремента " + (--byteMax));
+                "; значение после инкремента " + (++byteMax) + 
+                "; значение после декремента " + (--byteMax));
         System.out.println("short. Первоначальное значение " + shortMax + 
-        "; значение после инкремента " + (++shortMax) + 
-        "; значение после декремента " + (--shortMax));
+                "; значение после инкремента " + (++shortMax) + 
+                "; значение после декремента " + (--shortMax));
         System.out.println("int. Первоначальное значение " + intMax + 
-        "; значение после инкремента " + (++intMax) + 
-        "; значение после декремента " + (--intMax));
+                "; значение после инкремента " + (++intMax) + 
+                "; значение после декремента " + (--intMax));
         System.out.println("long. Первоначальное значение " + longMax + 
-        "; значение после инкремента " + (++longMax) + 
-        "; значение после декремента " + (--longMax));
+                "; значение после инкремента " + (++longMax) + 
+                "; значение после декремента " + (--longMax));
 
         System.out.println("\n5. Перестановка значений переменных");
         int a = 2;
@@ -77,16 +77,16 @@ public class VariablesTheme {
         System.out.println("Новые значения: a =  " + a + "; b = " + b);
 
         System.out.println("\n6. Вывод символов и их кодов");
-        char charHash = '#';
-        System.out.println(charHash + " " + (int) charHash);
-        char charAmpersand = '&';
-        System.out.println(charAmpersand + " " + (int) charAmpersand);
-        char charAtSign = '@';
-        System.out.println(charAtSign + " " + (int) charAtSign);
-        char charCaret  = '^';
-        System.out.println(charCaret + " " + (int) charCaret);
-        char charUnderscore = '_';
-        System.out.println(charUnderscore + " " + (int) charUnderscore);
+        char hash = '#';
+        System.out.println(hash + " " + (int) hash);
+        char ampersand = '&';
+        System.out.println(ampersand + " " + (int) ampersand);
+        char atSign = '@';
+        System.out.println(atSign + " " + (int) atSign);
+        char caret  = '^';
+        System.out.println(caret + " " + (int) caret);
+        char underscoreSymbole = '_';
+        System.out.println(underscoreSymbole + " " + (int) underscoreSymbole);
 
         System.out.println("\n7. Вывод в консоль ASCII-арт Дюка");
         char slash = '/';
@@ -94,10 +94,10 @@ public class VariablesTheme {
         char underscore = '_';
         char leftBracket = '(';
         char rightBracket = ')';
-        System.out.println("    " + slash + backslash + "    ");
-        System.out.println("   " + slash + "  " + backslash + "   ");
-        System.out.println("  " + slash + underscore + leftBracket + " " + rightBracket + backslash + "  ");
-        System.out.println(" " + slash + "      " + backslash + " ");
+        System.out.println("    " + slash + backslash);
+        System.out.println("   " + slash + "  " + backslash);
+        System.out.println("  " + slash + underscore + leftBracket + " " + rightBracket + backslash);
+        System.out.println(" " + slash + "      " + backslash);
         System.out.println("" + slash + underscore + underscore + underscore + underscore + slash + backslash + underscore + underscore + backslash);
   
         System.out.println("\n8. Вывод количества сотен, десятков и единиц числа");
@@ -106,7 +106,7 @@ public class VariablesTheme {
         int tens = initNumber / 10 % 10;
         int ones = initNumber % 10;
         System.out.println("Число " + initNumber + " содержит:\n" + hundreds + 
-        " сотен\n" + tens + " десятков\n" + ones + " единиц");
+                " сотен\n" + tens + " десятков\n" + ones + " единиц");
         System.out.println("Сумма его цифр =  " + (hundreds + tens + ones));
         System.out.println("Произведение  =  " + (hundreds * tens * ones));
 
@@ -114,7 +114,7 @@ public class VariablesTheme {
         int seconds = 86399;
         int hours = seconds / 3600;
         int minutes = seconds / 60 % 60;
-         seconds %= 60;
+        seconds %= 60;
         System.out.println(hours + ":" + minutes + ":" + seconds);
     }
 }

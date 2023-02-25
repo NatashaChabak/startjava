@@ -9,10 +9,10 @@ public class IfElseStatementTheme {
             System.out.println("Younger than 20");
         }
         boolean isMale = true;
-        if (isMale){
-            System.out.println("Male");
-        } else {
+        if (!isMale){
             System.out.println("Female");
+        } else {
+            System.out.println("Male");
         }
         float height = 1.75f;
         if (height < 1.80){
@@ -132,12 +132,12 @@ public class IfElseStatementTheme {
                 banknote100 = amount / 100 > banknote100 ? banknote100  : amount / 100;
                 amount -= banknote100 * 100;
                 banknote10 = (amount / 100 * 10 + amount / 10 % 10) > banknote10 ? banknote10  
-                : (amount / 100 * 10 + amount / 10 % 10);
+                        : (amount / 100 * 10 + amount / 10 % 10);
                 amount -= banknote10 * 10;
                 banknote1 = amount > banknote1 ? banknote1  : amount;
             }
             System.out.println("Consist of " + banknote100 + " * 100 banknotes; " + banknote10 + 
-            " * 10 banknotes; " + banknote1 + " * 1 banknotes; ");
+                    " * 10 banknotes; " + banknote1 + " * 1 banknotes; ");
         }
     }
 }
