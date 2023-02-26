@@ -30,38 +30,38 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n2. Поиск max и min числа");
-        int numb1 = 74;
-        int numb2 = 47;
-        if (numb1 == numb2) {
+        int num1 = 74;
+        int num2 = 47;
+        if (num1 == num2) {
             System.out.println("Number1 equals number2");
-        } else if (numb1 > numb2) {
-            System.out.println("max = " + numb1 + "; min = " + numb2);
+        } else if (num1 > num2) {
+            System.out.println("max = " + num1 + "; min = " + num2);
         } else {
-            System.out.println("max = " + numb2 + "; min = " + numb2);
+            System.out.println("max = " + num2 + "; min = " + num2);
         }
 
         System.out.println("\n3. Проверка числа");
         int randomNumber = 87;
         if (randomNumber == 0) {
-            System.out.println("Number " + randomNumber + " equals to zero");
+            System.out.println("Number = " + randomNumber);
         } else {
             String result;
             if (randomNumber < 0) {
-                result = "negative";
+                result = "negative ";
             } else {
-                result = "positive";
-            }
+                result = "positive ";
+            };
             if (randomNumber % 2 == 0) {
-                result = "even";
+                result += "& even";
             } else {
-                result = "odd";
-            }
+                result += "& odd";
+            };
             System.out.println("Number " + randomNumber + " is " + result);
         }
 
         System.out.println("\n4. Поиск одинаковых цифр в числах");
-        int num1 = 423;
-        int num2 = 573;
+        num1 = 423;
+        num2 = 573;
         int hundreds1 = num1 / 100;
         int tens1 = num1 / 10 % 10;
         int ones1 = num1 % 10;
@@ -108,17 +108,17 @@ public class IfElseStatementTheme {
         System.out.println("\n7. Определение оценки по предметам");
         int percentHistory = 59;
         int scoreHistory = 2;
-        if (percentHistory  > 73) {
+        if (percentHistory > 73) {
             scoreHistory = percentHistory > 91 ? 5 : 4;
-        } else if (percentHistory  > 60) {
+        } else if (percentHistory > 60) {
             scoreHistory = 3;
         }
         System.out.println("History score: " + scoreHistory);
         int percentProgramming = 91;
         int scoreProgramming = 2;
-        if (percentProgramming  > 73) {
+        if (percentProgramming > 73) {
             scoreProgramming = percentProgramming > 91 ? 5 : 4;
-        } else if (percentHistory  > 60) {
+        } else if (percentHistory > 60) {
             scoreProgramming = 3;
         }
         System.out.println("Programming score: " + scoreProgramming);
@@ -139,6 +139,7 @@ public class IfElseStatementTheme {
         int banknote100 = 10;
         int banknote10 = 5;
         int banknote1 = 50;
+        int amountLeft;
         int totalAmount = banknote100 * 100 + banknote10 * 10 + banknote1;
         if (totalAmount < amount) {
             System.out.println("Not enough money!");
@@ -146,8 +147,8 @@ public class IfElseStatementTheme {
             if (totalAmount > amount) {
                 banknote100 = amount / 100 > banknote100 ? banknote100  : amount / 100;
                 amount -= banknote100 * 100;
-                banknote10 = (amount / 100 * 10 + amount / 10 % 10) > banknote10 ? banknote10  
-                        : (amount / 100 * 10 + amount / 10 % 10);
+                amountLeft = amount / 100 * 10 + amount / 10 % 10;
+                banknote10 = amountLeft > banknote10 ? banknote10 : amountLeft;
                 amount -= banknote10 * 10;
                 banknote1 = amount > banknote1 ? banknote1  : amount;
             }
