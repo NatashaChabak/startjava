@@ -50,12 +50,12 @@ public class IfElseStatementTheme {
                 result = "negative ";
             } else {
                 result = "positive ";
-            };
+            }
             if (randomNumber % 2 == 0) {
                 result += "& even";
             } else {
                 result += "& odd";
-            };
+            }
             System.out.println("Number " + randomNumber + " is " + result);
         }
 
