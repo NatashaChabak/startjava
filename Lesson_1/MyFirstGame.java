@@ -8,28 +8,28 @@ public class MyFirstGame {
             System.out.println("Выбранное число не попадает в интервал!");
             return;
         }
-        int s = 1;
-        int randomNumber = createNumber(min, max, s);
-        while (randomNumber != num) {
-            if (randomNumber < num) {
-                System.out.println("Число " + randomNumber + " меньше того, что загадал компьютер");
-                min = randomNumber;
-            } else if (randomNumber > num) {
-                System.out.println("Число " + randomNumber + " больше того, что загадал компьютер");
-                max = randomNumber;
+        int counter = 1;
+        int targetNum = createNumber(min, max, counter);
+        while (targetNum != num) {
+            if (targetNum < num) {
+                System.out.println("Число " + targetNum + " меньше того, что загадал компьютер");
+                min = targetNum;
+            } else if (targetNum > num) {
+                System.out.println("number " + targetNum + " больше того, что загадал компьютер");
+                max = targetNum;
             }
-            s++;
-            randomNumber = createNumber(min, max, s);
+            counter++;
+            targetNum = createNumber(min, max, counter);
         }
         System.out.println("Вы угадали! Число = " + num);
 
     }
 
-    static int createNumber(int min, int max, int s) {
+    static int createNumber(int min, int max, int counter) {
         if (min == max) {
             return min;
         } else if ((max - min) == 1) {
-            return s % 2 == 0 ? min : max;
+            return counter % 2 == 0 ? min : max;
         } else if ((max - min) == 2) {
             return min + 1;
         }

@@ -12,9 +12,7 @@ public class Calculator {
         } else if (sign == '*') {
             result = a * b;
         } else if (sign == '/') {
-            float af = a;
-            float bf = b;
-            result = af / bf;
+            result = (float) a / (float) b;
         } else if (sign == '^') {
             result = a;
             for (int i = 1; i < b; i++) {
@@ -26,6 +24,6 @@ public class Calculator {
             System.out.println("Cannot recognize sign " + sign);
             return;
         }
-        System.out.println("" + a + " " + sign + " " + b + " = " + result);
+        System.out.println(a + " " + sign + " " + b + " = " + result);
     }
 }
