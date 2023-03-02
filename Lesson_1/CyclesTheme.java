@@ -10,7 +10,7 @@ public class CyclesTheme {
                 sumEven += counter;
             } else {
                 sumOdd += counter;
-            };
+            }
             counter++;
         } while (counter < 22);
         System.out.println("В промежутке [-10, 21] сумма четных чисел = " + sumEven + 
@@ -64,86 +64,95 @@ public class CyclesTheme {
         System.out.println(countTwos + " (" + oddOrEven + ") количество двоек");
 
         System.out.println("\n6. Отображение фигур в консоли");
-        for (int i = 0; i < 6; i++) {
-            System.out.println("**********");
+        for (int i = 0; i < 5; i++) {
+            if (i == 4) {
+                System.out.println("**********\n");
+            } else {
+                System.out.println("**********");
+            }
         }
 
-        num = 5;
-        char c = '#';
-        int i;
-        while (num > 0) {
-            for (i = 1; i <= num; i++) {
-                System.out.print(c);
+        int inRow = 5;
+        int signs;
+        while (inRow > 0) {
+            signs = 0;
+            while (signs < inRow) {
+                System.out.print('#');
+                signs++;
             }
             System.out.println();
-            num -= 1;
+            inRow--;
         }
+        System.out.println();
 
-        num  = 1;
-        int numCycles;
+        int row  = 1;
         do {
-            numCycles = num > 3 ? (6 - num) : num;
-            for (i = 1; i <= numCycles; i++) {
+            inRow = row > 3 ? (6 - row) : row;
+            counter = 1;
+            do {
                 System.out.print("$");
-            }
+                counter++;
+            } while (counter <= inRow);
             System.out.println();
-            num++;
-        } while (num < 6);
+            row++;
+        } while (row < 6);
 
         System.out.println("\n7. Отображение ASCII-символов");
         System.out.printf("%8s%n", "Dec Char");
-        char exampleChar;
-        for (i = 0; i < 128; i++) {
+        for (int i = 0; i < 128; i++) {
             if ((i < 48 && i % 2 != 0) || (i > 96 && i < 123 && i % 2 == 0)) {
-                exampleChar = (char) i;
-                System.out.printf("%3d", i);
-                System.out.printf("%4s%n", exampleChar);
+                System.out.printf("%3d %3s%n", i, (char) i);
             }
         }
 
         System.out.println("\n8. Проверка, является ли число палиндромом");
-        int initNum = 1234321;
-        int lenght = 1;
-        while (initNum / lenght > 1) {
-            lenght *= 10;
-        }
-        num = initNum;
+        num = 1234321;
+        int n = num;
         int reversedNum = 0;
-        while (num > 0) {
-            reversedNum += lenght * (num % 10);
-            num /= 10;
-            lenght /= 10;
+        while (n > 0) {
+            reversedNum = reversedNum * 10 + n % 10;
+            n /= 10;
         }
-        String result = reversedNum == initNum ? "" : " не";
-        System.out.println("Число " + initNum + result + " является палиндромом");
+        System.out.println("Число " + reversedNum + (reversedNum == num ? "" : " не") + " является палиндромом");
 
         System.out.println("\n9. Определение, является ли число счастливым");
-        num = 224521;
+        num = 215521;
+        int firstPart = num / 1000;
+        int secondPart = num % 1000;
         int sum1 = 0;
         int sum2 = 0;
         counter = 0;
-        String abc1 = "";
-        String abc2 = "";
-        String initResult = "Число " + initNum;
+        String initResult = "Число " + num;
         while (num > 0) {
             digit = num % 10;
             if (counter > 2) {
                 sum2 += digit;
-                abc2 = digit + abc2;
             } else {
                 sum1 += digit;
-                abc1 = digit + abc1;
             }
             num /= 10;
             counter++;
         }
-        result = sum2 == sum1 ? "" : " не";
-        System.out.println("Сумма цифр " + abc2 + " = " + sum2);
-        System.out.println("Сумма цифр " + abc1 + " = " + sum1);
-        System.out.println(initResult + result + " является счастливым");
+        System.out.println("Сумма цифр " + firstPart + " = " + sum2);
+        System.out.println("Сумма цифр " + secondPart + " = " + sum1);
+        initResult += sum2 == sum1 ? "" : " не";
+        System.out.println(initResult + " является счастливым");
 
         System.out.println("\n10. Вывод таблицы умножения Пифагора");
-        for (i = 0; i < 9; i++) {
+        for (int i = 0; i < 9; i++) {
+           if (i == 0) {
+                System.out.printf("%4s", "|");
+            } else {
+                System.out.printf("%3d", (i + 1));
+            }
+        }
+        System.out.println();
+        for (int k = 0; k < 28; k++) {
+            System.out.print("-");
+        }
+        System.out.println();
+
+        for (int i = 1; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (i == 0 && j == 0) {
                     System.out.printf("%3s", "");
@@ -155,12 +164,6 @@ public class CyclesTheme {
                 }
             }
             System.out.println();
-            if (i == 0) {
-                for (int k = 0; k < 28; k++) {
-                    System.out.print("-");
-                }
-                System.out.println();
-            }
         }
     }
 }
