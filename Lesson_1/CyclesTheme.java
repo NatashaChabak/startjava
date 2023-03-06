@@ -65,34 +65,32 @@ public class CyclesTheme {
 
         System.out.println("\n6. Отображение фигур в консоли");
         for (int i = 0; i < 5; i++) {
-            if (i == 4) {
-                System.out.println("**********\n");
-            } else {
-                System.out.println("**********");
-            }
+            System.out.println("**********");
         }
+        System.out.println();
 
-        int inRow = 5;
-        int signs;
-        while (inRow > 0) {
-            signs = 0;
-            while (signs < inRow) {
+
+        int countLines = 5;
+        int countColumns;
+        while (countLines > 0) {
+            countColumns = 0;
+            while (countColumns < countLines) {
                 System.out.print('#');
-                signs++;
+                countColumns++;
             }
             System.out.println();
-            inRow--;
+            countLines--;
         }
         System.out.println();
 
         int row  = 1;
         do {
-            inRow = row > 3 ? (6 - row) : row;
+            countLines = row > 3 ? (6 - row) : row;
             counter = 1;
             do {
                 System.out.print("$");
                 counter++;
-            } while (counter <= inRow);
+            } while (counter <= countLines);
             System.out.println();
             row++;
         } while (row < 6);
@@ -107,22 +105,22 @@ public class CyclesTheme {
 
         System.out.println("\n8. Проверка, является ли число палиндромом");
         num = 1234321;
-        int n = num;
+        int copyNum = num;
         int reversedNum = 0;
-        while (n > 0) {
-            reversedNum = reversedNum * 10 + n % 10;
-            n /= 10;
+        while (copyNum > 0) {
+            reversedNum = reversedNum * 10 + copyNum % 10;
+            copyNum /= 10;
         }
         System.out.println("Число " + reversedNum + (reversedNum == num ? "" : " не") + " является палиндромом");
 
         System.out.println("\n9. Определение, является ли число счастливым");
         num = 215521;
-        int firstPart = num / 1000;
-        int secondPart = num % 1000;
+        copyNum = num;
+        int leftPart = num / 1000;
+        int rightPart = num % 1000;
         int sum1 = 0;
         int sum2 = 0;
         counter = 0;
-        String initResult = "Число " + num;
         while (num > 0) {
             digit = num % 10;
             if (counter > 2) {
@@ -133,10 +131,9 @@ public class CyclesTheme {
             num /= 10;
             counter++;
         }
-        System.out.println("Сумма цифр " + firstPart + " = " + sum2);
-        System.out.println("Сумма цифр " + secondPart + " = " + sum1);
-        initResult += sum2 == sum1 ? "" : " не";
-        System.out.println(initResult + " является счастливым");
+        System.out.println("Сумма цифр " + leftPart + " = " + sum2);
+        System.out.println("Сумма цифр " + rightPart + " = " + sum1);
+        System.out.println("Число " + copyNum + (sum2 == sum1 ? "" : " не") + " является счастливым");
 
         System.out.println("\n10. Вывод таблицы умножения Пифагора");
         for (int i = 0; i < 9; i++) {
@@ -147,7 +144,7 @@ public class CyclesTheme {
             }
         }
         System.out.println();
-        for (int k = 0; k < 28; k++) {
+        for (int i = 0; i < 28; i++) {
             System.out.print("-");
         }
         System.out.println();
