@@ -69,7 +69,6 @@ public class CyclesTheme {
         }
         System.out.println();
 
-
         int countLines = 5;
         int countColumns;
         while (countLines > 0) {
@@ -116,8 +115,6 @@ public class CyclesTheme {
         System.out.println("\n9. Определение, является ли число счастливым");
         num = 215521;
         copyNum = num;
-        int leftPart = num / 1000;
-        int rightPart = num % 1000;
         int sum1 = 0;
         int sum2 = 0;
         counter = 0;
@@ -131,8 +128,8 @@ public class CyclesTheme {
             num /= 10;
             counter++;
         }
-        System.out.println("Сумма цифр " + leftPart + " = " + sum2);
-        System.out.println("Сумма цифр " + rightPart + " = " + sum1);
+        System.out.println("Сумма цифр " + (copyNum / 1000) + " = " + sum2);
+        System.out.println("Сумма цифр " + (copyNum % 1000) + " = " + sum1);
         System.out.println("Число " + copyNum + (sum2 == sum1 ? "" : " не") + " является счастливым");
 
         System.out.println("\n10. Вывод таблицы умножения Пифагора");

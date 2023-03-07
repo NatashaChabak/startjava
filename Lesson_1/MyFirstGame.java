@@ -12,8 +12,9 @@ public class MyFirstGame {
             return;
         }
         Random random = new Random();
-        int myNum = random.nextInt(max - min + 1) + min;
-        while (hiddenNum != myNum) {
+        int myNum;
+        do {
+            myNum = random.nextInt(max - min + 1) + min;
             if (myNum < hiddenNum) {
                 System.out.println("Число " + myNum + " меньше того, что загадал компьютер");
                 min = myNum;
@@ -21,9 +22,7 @@ public class MyFirstGame {
                 System.out.println("number " + myNum + " больше того, что загадал компьютер");
                 max = myNum;
             }
-            myNum = random.nextInt(max - min + 1) + min;
-        }
+        } while (hiddenNum != myNum);
         System.out.println("Вы угадали! Число = " + hiddenNum);
-
     }
 }
