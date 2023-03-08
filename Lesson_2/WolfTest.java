@@ -8,5 +8,8 @@ public class WolfTest {
         wolf.weight = 12;
         wolf.isMale = true;
         System.out.println(wolf.name + " is a " + wolf.color + " wolf "+ wolf.age + " years old");
+        wolf.run();
+        wolf.sit();
+        wolf.walk();
     }
 }
