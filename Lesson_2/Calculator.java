@@ -1,6 +1,6 @@
 public class Calculator {
-    
-    public static void calculate(int a, int b, char sign) {
+
+    public void calculate(int a, int b, char sign) {
         float result = 0f;
         switch (sign) {
             case '+':

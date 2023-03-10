@@ -10,13 +10,28 @@ public class Wolf {
         isMale = newIsMale;
     }
 
+    public boolean IsMale() {
+        return isMale;
+    }
+
+
     public void setName(String newName) {
         name = newName;
     }
 
+    public String getName() {
+        return name;
+    }
+
+
     public void setWeight(int newWeight) {
         weight = newWeight;
     }
+
+    public int getWeight() {
+        return weight;
+    }
+
 
     public void setAge(int newAge) {
         if (newAge > 8) {
@@ -26,29 +41,19 @@ public class Wolf {
         }
     }
 
-    public void setColor(String newColor) {
-        color = newColor;
-    }
-
-    public boolean IsMale() {
-        return isMale;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
     public int getAge() {
         return age;
+    }
+
+
+    public void setColor(String newColor) {
+        color = newColor;
     }
 
     public String getColor() {
         return color;
     }
+    
 
     public void walk() {
         System.out.println("walking");

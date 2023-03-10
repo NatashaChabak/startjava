@@ -13,10 +13,13 @@ public class CalculatorTest {
             char sign = scanner.nextLine().charAt(0);
             System.out.print("Введите второе число: ");
             int b = scanner.nextInt();
-            Calculator.calculate(a, b, sign);
-            System.out.print("Хотите продолжить вычисления? [yes/no] ");
+            Calculator calculator = new Calculator();
+            calculator.calculate(a, b, sign);
             scanner.nextLine();
-            answer = scanner.nextLine();
+            do {
+                System.out.print("Хотите продолжить вычисления? [yes/no] ");
+                answer = scanner.nextLine();
+            } while (!answer.equals("no") && !answer.equals("yes"));
         } while (!answer.equals("no"));
     }
 }
