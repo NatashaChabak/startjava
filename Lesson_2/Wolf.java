@@ -6,38 +6,35 @@ public class Wolf {
     private int age;
     private String color;
 
-    public void setIsMale(boolean newIsMale) {
-        isMale = newIsMale;
+    public void setIsMale(boolean isMale) {
+        this.isMale = isMale;
     }
 
-    public boolean IsMale() {
+    public boolean isMale() {
         return isMale;
     }
 
-
-    public void setName(String newName) {
-        name = newName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName() {
         return name;
     }
 
-
-    public void setWeight(int newWeight) {
-        weight = newWeight;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
     public int getWeight() {
         return weight;
     }
 
-
-    public void setAge(int newAge) {
-        if (newAge > 8) {
+    public void setAge(int age) {
+        if (age > 8) {
             System.out.println("Incorrect age");
         } else {
-            age = newAge;
+            this.age = age;
         }
     }
 
@@ -45,15 +42,13 @@ public class Wolf {
         return age;
     }
 
-
-    public void setColor(String newColor) {
-        color = newColor;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public String getColor() {
         return color;
     }
-    
 
     public void walk() {
         System.out.println("walking");

@@ -11,7 +11,7 @@ public class GuessNumber {
         this.player2 = player2;
     }
 
-    public void playGame() {
+    public void start() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         int min = 1;

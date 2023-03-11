@@ -9,6 +9,7 @@ public class JaegerTest {
         if (jaeger1.accelerate()) {
             jaeger1.setSpeed(7);
         }
+        
         Jaeger jaeger2 = new Jaeger("Crimson Typhoon", "China", 8, 9);
         System.out.println("Created: " + jaeger2);
         jaeger2.move();

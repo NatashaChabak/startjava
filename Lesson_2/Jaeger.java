@@ -7,14 +7,16 @@ public class Jaeger {
     private int strenght;
 
     public Jaeger(String modelName) {
-        this.modelName = modelName;
+        this(modelName, "", 0, 0);
     }
+
     public Jaeger(String modelName, String origin) {
-        this(modelName);
-        this.origin = origin;
+        this(modelName, origin, 0, 0);
     }
+
     public Jaeger(String modelName, String origin, int strenght, int speed) {
-        this(modelName, origin);
+        this.modelName = modelName;
+        this.origin = origin;
         this.strenght = strenght;
         this.speed =  speed;
     }
@@ -47,10 +49,6 @@ public class Jaeger {
         this.strenght = strenght;
     }
 
-    public String toString() {
-        return String.format("Model: %s \nOrigin: %s \nSpeed: %s\nStrenght: %s", modelName, origin, speed, strenght);
-    }
-
     public boolean accelerate() {
         System.out.println("Accelerating!");
         return true;
@@ -58,5 +56,9 @@ public class Jaeger {
 
     public void move() {
         System.out.println("Moving!");
+    }
+
+    public String toString() {
+        return String.format("Model: %s \nOrigin: %s \nSpeed: %s\nStrenght: %s", modelName, origin, speed, strenght);
     }
 }
