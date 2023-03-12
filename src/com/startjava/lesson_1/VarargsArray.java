@@ -1,4 +1,4 @@
-package com.startlava.lesson_1;
+package com.startjava.lesson_1;
 
 public class VarargsArray {
     public static void main(String[] args) {
