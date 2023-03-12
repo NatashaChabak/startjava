@@ -7,7 +7,7 @@ public class Jaeger {
     private int strenght;
 
     public Jaeger(String modelName) {
-        this(modelName, "", 0, 0);
+        this.modelName = modelName;
     }
 
     public Jaeger(String modelName, String origin) {
