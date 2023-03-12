@@ -1,3 +1,4 @@
+package com.startlava.lesson_1;
 
 import java.util.Random;
 

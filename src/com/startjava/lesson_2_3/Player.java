@@ -1,3 +1,5 @@
+package com.startlava.lesson_2_3;
+
 public class Player {
 
     private String name;

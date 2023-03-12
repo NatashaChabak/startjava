@@ -1,3 +1,5 @@
+package com.startlava.lesson_2_3;
+
 public class WolfTest {
 
     public static void main(String[] args) {

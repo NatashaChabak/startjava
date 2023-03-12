@@ -1,3 +1,5 @@
+package com.startlava.lesson_2_3;
+
 public class Calculator {
 
     public void calculate(int a, int b, char sign) {

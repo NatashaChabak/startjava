@@ -1,3 +1,4 @@
+package com.startlava.lesson_2_3;
 
 public class Jaeger {
 
