@@ -1,6 +1,9 @@
 *.class
 *.DS_Store
 *.iml
+options
+optionsj
+sources
 out/
 lib/
 .idea/
