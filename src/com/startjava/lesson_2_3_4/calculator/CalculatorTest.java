@@ -23,7 +23,8 @@ public class CalculatorTest {
                 double result = Calculator.calculate(input);
                 System.out.print(result % 1 == 0 ? String.format("%,.0f", result) : String.format("%,.3f", result));
             } catch (IllegalArgumentException e) {
-                System.out.println("Cannot recognize sign");
+                System.out.println("Incorrect input");
+                continue;
             }
             answer = "";
           }
