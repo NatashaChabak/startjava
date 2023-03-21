@@ -6,22 +6,26 @@ public class CalculatorTest {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String answer;
-        do {
-            System.out.print("Введите первое число: ");
-            int a = scanner.nextInt();
-            scanner.nextLine();
-            System.out.print("Введите знак математической операции: ");
-            char sign = scanner.nextLine().charAt(0);
-            System.out.print("Введите второе число: ");
-            int b = scanner.nextInt();
-            Calculator calculator = new Calculator();
-            calculator.calculate(a, b, sign);
-            scanner.nextLine();
-            do {
+        String answer = "yes";
+        while (true) {
+            if (!answer.equals("yes")) {
                 System.out.print("Хотите продолжить вычисления? [yes/no] ");
                 answer = scanner.nextLine();
-            } while (!answer.equals("no") && !answer.equals("yes"));
-        } while (!answer.equals("no"));
+                if (answer.equals("no")) {
+                    return;
+                } else {
+                    continue;
+                }
+            }
+            System.out.print("Введите математическое выражение: ");
+            String input = scanner.nextLine();
+            String[] inputArr = input.split(" ");
+            int a = Integer.parseInt(inputArr[0]);
+            String sign = inputArr[1];
+            int b = Integer.parseInt(inputArr[2]);
+            double result = Calculator.calculate(a, b, sign);
+            System.out.println(a + " " + sign + " " + b + " = " + (result % 1 == 0 ? String.format("%,.0f", result) : String.format("%,.3f", result) ));
+            answer = "";
+          }
     }
 }

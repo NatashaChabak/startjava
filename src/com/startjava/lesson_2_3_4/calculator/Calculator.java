@@ -2,31 +2,22 @@ package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
-    public void calculate(int a, int b, char sign) {
-        float result = 0f;
+    public static double calculate(int a, int b, String sign) {
+        double result = 0d;
         switch (sign) {
-            case '+':
-                result = a + b;
-                break;
-            case '-':
-                result = a - b;
-                break;
-            case '*':
-                result = a * b;
-                break;
-            case '/':
-                result = (float) a / (float) b;
-                break;
-            case '^':
-                result = a;
-                for (int i = 1; i < b; i++) {
-                    result *= a;
-                }
-                break;
+            case "+":
+                return (a + b);
+            case "-":
+                return (a - b);
+            case "*":
+                return Math.multiplyExact(a, b);
+            case "/":
+                return (double) a / (double) b;
+            case "^":
+                return Math.pow(a, b);
             default:
                 System.out.println("Cannot recognize sign " + sign);
-                return;
+                return result;
         }
-        System.out.println(a + " " + sign + " " + b + " = " + result);
     }
 }
