@@ -8,7 +8,7 @@ public class ArrayTheme {
         int[] intArr = {5, 1, 3, 2, 7, 6, 4};
         int len = intArr.length;
         int half = len / 2;
-        showArray(intArr);
+        show(intArr);
         for (int i = 0; i < half; i++) {
             len--;
             int temp = intArr[i];
@@ -16,7 +16,7 @@ public class ArrayTheme {
             intArr[len] =  temp;
         }
         System.out.println();
-        showArray(intArr);
+        show(intArr);
 
         System.out.println("\n\n2. Вывод произведения элементов массива");
         intArr = new int[10];
@@ -41,17 +41,17 @@ public class ArrayTheme {
         int border = len / 2;
         float middleCellValue = floatArr[border++];
         System.out.println("Исходный массив:");
-        showArray(floatArr, border);
-        int quantCells = 0;
+        show(floatArr, border);
+        int count = 0;
         for (int i = 0; i < len; i++) {
             if (floatArr[i] > middleCellValue) {
                 floatArr[i] = 0;
-                quantCells++;
+                count++;
             }
         }
         System.out.println("\nИзмененный массив:");
-        showArray(floatArr, border);
-        System.out.println("\nКоличество обнуленных ячеек = " + quantCells);
+        show(floatArr, border);
+        System.out.println("\nКоличество обнуленных ячеек = " + count);
 
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
         char[] alphabet = new char[26];
@@ -78,13 +78,13 @@ public class ArrayTheme {
             intArr[i] = randomNum;
         }
         Arrays.sort(intArr);
-        showArray(intArr);
+        show(intArr);
 
         System.out.println("\n6. Копирование не пустых строк");
         String[] srcStrings = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
         len = srcStrings.length;
         int countNonBlankStrings = len;
-        for (String s: srcStrings) {
+        for (String s : srcStrings) {
             if (s.isBlank()) {
                 countNonBlankStrings--;
             }
@@ -92,7 +92,7 @@ public class ArrayTheme {
         String[] destStrings = new String[countNonBlankStrings];
         int inputLen = 0;
         int size = 0;
-        for (int i =0; i < len; i++) {
+        for (int i = 0; i < len; i++) {
             if (!srcStrings[i].isBlank()) {
                 inputLen++;
             } else if (inputLen > 0) {
@@ -102,9 +102,9 @@ public class ArrayTheme {
             }
         }
         System.out.println("Исходный массив:");
-        showArray(srcStrings);
+        show(srcStrings);
         System.out.println("\nМассив с непустыми строками:");
-        showArray(destStrings);
+        show(destStrings);
     }
     private static boolean contains(int[] intArr, int value) {
         for (int a: intArr) {
@@ -115,9 +115,9 @@ public class ArrayTheme {
         return false;
     }
 
-    private static void showArray(int[] array) {
+    private static void show(int[] arr) {
         int counter = 0;
-        for (int a : array) {
+        for (int a : arr) {
             System.out.print(a + " ");
             counter++;
             if (counter % 10 == 0) {
@@ -126,19 +126,19 @@ public class ArrayTheme {
         }
     }
 
-    private static void showArray(String[] array) {
-        for (String s : array) {
+    private static void show(String[] arr) {
+        for (String s : arr) {
             System.out.print(s + "; ");
         }
     }
 
-    private static void showArray(float[] array, int border) {
+    private static void show(float[] arr, int border) {
         for (int i = 0; i < border; i++) {
-            System.out.printf("%-10.3f", array[i]);
+            System.out.printf("%-8.3f", arr[i]);
         }
         System.out.println();
-        for (int i = border; i < array.length; i++) {
-            System.out.printf("%-10.3f", array[i]);
+        for (int i = border; i < arr.length; i++) {
+            System.out.printf("%-8.3f", arr[i]);
         }
     }
 }

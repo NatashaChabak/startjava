@@ -18,12 +18,16 @@ public class CalculatorTest {
                 }
             }
             System.out.print("Введите математическое выражение: ");
-            String input = scanner.nextLine();
+            String calculateInput = scanner.nextLine();
             try {
-                double result = Calculator.calculate(input);
-                System.out.print(result % 1 == 0 ? String.format("%,.0f", result) : String.format("%,.3f", result));
+                double result = Calculator.calculate(calculateInput);
+                System.out.print(calculateInput + " = ");
+                System.out.printf(result % 1 == 0 ? "%,.0f" : "%,.3f", result);
             } catch (IllegalArgumentException e) {
-                System.out.println("Incorrect input");
+                System.out.println("Некорректный ввод: " + e.getMessage());
+                continue;
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Некорректный ввод: " + e.getMessage());
                 continue;
             }
             answer = "";
