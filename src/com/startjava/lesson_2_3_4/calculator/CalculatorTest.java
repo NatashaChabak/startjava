@@ -23,10 +23,7 @@ public class CalculatorTest {
                 double result = Calculator.calculate(calculateInput);
                 System.out.print(calculateInput + " = ");
                 System.out.printf(result % 1 == 0 ? "%,.0f" : "%,.3f", result);
-            } catch (IllegalArgumentException e) {
-                System.out.println("Некорректный ввод: " + e.getMessage());
-                continue;
-            } catch (ArrayIndexOutOfBoundsException e) {
+            } catch (RuntimeException e) {
                 System.out.println("Некорректный ввод: " + e.getMessage());
                 continue;
             }
