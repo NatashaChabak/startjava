@@ -5,21 +5,49 @@ import java.util.Scanner;
 public class GuessNumberTest {
 
     public static void main(String[] args) {
+        Player[] players;
+        try {
+            players = createTeam();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+        GuessNumber game = new GuessNumber(players);
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите имя первого игрока: ");
-        String name1 = scanner.nextLine();
-        Player player1 = new Player(name1);
-        System.out.print("Введите имя второго игрока: ");
-        String name2 = scanner.nextLine();
-        Player player2 = new Player(name2);
-        String answer;
-        do {
-            GuessNumber game = new GuessNumber(player1, player2);
-            game.start();
-            do {
+        String answer = "yes";
+        while (true) {
+            if (!answer.equals("yes")) {
                 System.out.print("Хотите продолжить игру? [yes/no] ");
                 answer = scanner.nextLine();
-            } while (!answer.equals("no") && !answer.equals("yes"));
-        } while (!answer.equals("no"));
+                if (answer.equals("no")) {
+                    return;
+                } else {
+                    continue;
+                }
+            }
+            game.start();
+            for (Player player : players) {
+                player.show();
+                player.startNewRound();
+            }
+            answer = "";
+        }
+    }
+
+    public static Player[] createTeam() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите количество игроков: ");
+        int countPlayers = scanner.nextInt();
+        if (countPlayers <= 0) {
+            throw new ArrayIndexOutOfBoundsException("Число игроков должно быть больше нуля");
+        }
+        scanner.nextLine();
+        Player[] players = new Player[countPlayers];
+        for (int i = 0; i < countPlayers; i++) {
+            System.out.print("Введите имя игрока № " + (i + 1) + ": ");
+            String name = scanner.nextLine();
+            players[i] = new Player(name);
+        }
+        return players;
     }
 }
