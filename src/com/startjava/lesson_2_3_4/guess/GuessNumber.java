@@ -46,13 +46,11 @@ public class GuessNumber {
                     if (countLosses == playerArr.length) {
                         return;
                     }
-                } else if (num < hiddenNum) {
-                    System.out.println("Число " + num + " меньше того, что загадал компьютер");
-                    min = num;
                 } else  {
-                    System.out.println("Число " + num + " больше того, что загадал компьютер");
-                    max = num;
-                 }
+                    System.out.println("Число " + num + (num < hiddenNum ? " меньше" : " больше") + " того, что загадал компьютер");
+                    min = (num < hiddenNum ? num : min);
+                    max = (num > hiddenNum ? num : max);
+                }
             }
         }
     }

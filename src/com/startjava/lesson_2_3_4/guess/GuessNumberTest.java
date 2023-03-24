@@ -5,11 +5,8 @@ import java.util.Scanner;
 public class GuessNumberTest {
 
     public static void main(String[] args) {
-        Player[] players;
-        try {
-            players = createTeam();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println(e.getMessage());
+        Player[] players = createTeam();
+        if (players == null) {
             return;
         }
         GuessNumber game = new GuessNumber(players);
@@ -39,7 +36,8 @@ public class GuessNumberTest {
         System.out.print("Введите количество игроков: ");
         int countPlayers = scanner.nextInt();
         if (countPlayers <= 0) {
-            throw new ArrayIndexOutOfBoundsException("Число игроков должно быть больше нуля");
+            System.out.println("Число игроков должно быть больше нуля");
+            return null;
         }
         scanner.nextLine();
         Player[] players = new Player[countPlayers];

@@ -18,11 +18,10 @@ public class CalculatorTest {
                 }
             }
             System.out.print("Введите математическое выражение: ");
-            String calculateInput = scanner.nextLine();
+            String mathExpression = scanner.nextLine();
             try {
-                double result = Calculator.calculate(calculateInput);
-                System.out.print(calculateInput + " = ");
-                System.out.printf(result % 1 == 0 ? "%,.0f" : "%,.3f", result);
+                double result = Calculator.calculate(mathExpression);
+                System.out.printf(mathExpression + " = " + (result % 1 == 0 ? "%,.0f" : "%,.3f"), result);
             } catch (RuntimeException e) {
                 System.out.println("Некорректный ввод: " + e.getMessage());
                 continue;

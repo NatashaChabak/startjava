@@ -2,10 +2,11 @@ package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
-    public static double calculate(String calculateInput) {
-        String[] calculateParams = calculateInput.split(" ");
+    public static double calculate(String mathExpression) {
+        String[] calculateParams = mathExpression.split(" ");
         if (calculateParams.length != 3) {
-            throw new ArrayIndexOutOfBoundsException("Введите значения, разделенные пробелом");
+            System.out.println("Введите значения, разделенные пробелом");
+            return 0;
         }
         int a = Integer.parseInt(calculateParams[0]);
         String sign = calculateParams[1];
@@ -13,7 +14,7 @@ public class Calculator {
         if (a <= 0 || b <= 0) {
             throw new IllegalArgumentException("Введите положительные числа!");
         }
-        double result = switch (sign) {
+        return switch (sign) {
             case "+" -> a + b;
             case "-" -> a - b;
             case "*" -> Math.multiplyExact(a, b);
@@ -21,6 +22,5 @@ public class Calculator {
             case "^" -> Math.pow(a, b);
             default ->  throw new IllegalArgumentException("Некорректный знак операции!");
         };
-        return result;
     }
 }
