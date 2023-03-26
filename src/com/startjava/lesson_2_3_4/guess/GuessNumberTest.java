@@ -5,46 +5,40 @@ import java.util.Scanner;
 public class GuessNumberTest {
 
     public static void main(String[] args) {
-        Player[] players = createTeam();
-        if (players == null) {
-            return;
-        }
+        Player[] players = createPlayers();
         GuessNumber game = new GuessNumber(players);
         Scanner scanner = new Scanner(System.in);
         String answer = "yes";
-        while (true) {
-            if (!answer.equals("yes")) {
-                System.out.print("Хотите продолжить игру? [yes/no] ");
-                answer = scanner.nextLine();
-                if (answer.equals("no")) {
-                    return;
-                } else {
-                    continue;
+        do {
+            if (answer.equals("yes")) {
+                game.start();
+                for (Player player : players) {
+                    int[] enteredNums = player.getEnteredNums();
+                    System.out.print("Числа игрока " + player.getName() + ": ");
+                    for (int enteredNum : enteredNums) {
+                        System.out.print(enteredNum + " ");
+                    }
+                    System.out.println();
+                    player.clear();
                 }
             }
-            game.start();
-            for (Player player : players) {
-                player.show();
-                player.startNewRound();
-            }
-            answer = "";
-        }
+            System.out.print("Хотите продолжить игру? [yes/no] ");
+            answer = scanner.nextLine();
+         } while (!answer.equals("no"));
     }
 
-    public static Player[] createTeam() {
+    public static Player[] createPlayers() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите количество игроков: ");
-        int countPlayers = scanner.nextInt();
-        if (countPlayers <= 0) {
-            System.out.println("Число игроков должно быть больше нуля");
-            return null;
-        }
+        int countPlayers;
+        do {
+            System.out.print("Введите количество игроков: ");
+            countPlayers = scanner.nextInt();
+        } while (countPlayers <= 0);
         scanner.nextLine();
         Player[] players = new Player[countPlayers];
         for (int i = 0; i < countPlayers; i++) {
             System.out.print("Введите имя игрока № " + (i + 1) + ": ");
-            String name = scanner.nextLine();
-            players[i] = new Player(name);
+            players[i] = new Player(scanner.nextLine());
         }
         return players;
     }

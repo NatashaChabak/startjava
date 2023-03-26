@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Player {
     private final String name;
-    private int counter;
-    private final int[] numArr = new int[10];
+    private int attempt;
+    private final int[] enteredNums = new int[10];
 
     public Player(String name) {
         this.name =  name;
@@ -16,28 +16,25 @@ public class Player {
     }
 
     public int getCounter() {
-       return counter;
+       return attempt;
     }
+
     public boolean setNum(int num, int min, int max) {
         if (num < min || num > max) {
             System.out.println("Введенное число вне интервала от " + min + " до " + max);
             return false;
         }
-        numArr[counter] = num;
-        counter++;
+        enteredNums[attempt] = num;
+        attempt++;
         return true;
     }
 
-    public void show() {
-        System.out.print("Числа игрока " + name + ": ");
-        for (int i = 0; i < counter; i++) {
-            System.out.print(numArr[i] + " ");
-        }
-        System.out.println();
+    public int[] getEnteredNums() {
+        return Arrays.copyOf(enteredNums, attempt);
     }
 
-    public void startNewRound() {
-        Arrays.fill(numArr, 0, counter, 0);
-        counter = 0;
+    public void clear() {
+        Arrays.fill(enteredNums, 0, attempt, 0);
+        attempt = 0;
     }
 }

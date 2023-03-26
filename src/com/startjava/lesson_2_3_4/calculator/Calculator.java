@@ -3,14 +3,14 @@ package com.startjava.lesson_2_3_4.calculator;
 public class Calculator {
 
     public static double calculate(String mathExpression) {
-        String[] calculateParams = mathExpression.split(" ");
-        if (calculateParams.length != 3) {
+        String[] partsExpression = mathExpression.split(" ");
+        if (partsExpression.length != 3) {
             System.out.println("Введите значения, разделенные пробелом");
             return 0;
         }
-        int a = Integer.parseInt(calculateParams[0]);
-        String sign = calculateParams[1];
-        int b = Integer.parseInt(calculateParams[2]);
+        int a = Integer.parseInt(partsExpression[0]);
+        String sign = partsExpression[1];
+        int b = Integer.parseInt(partsExpression[2]);
         if (a <= 0 || b <= 0) {
             throw new IllegalArgumentException("Введите положительные числа!");
         }
@@ -20,7 +20,7 @@ public class Calculator {
             case "*" -> Math.multiplyExact(a, b);
             case "/" -> (double) a / (double) b;
             case "^" -> Math.pow(a, b);
-            default ->  throw new IllegalArgumentException("Некорректный знак операции!");
+            default -> throw new IllegalArgumentException("Некорректный знак операции!");
         };
     }
 }
