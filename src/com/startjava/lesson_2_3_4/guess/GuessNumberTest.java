@@ -27,7 +27,7 @@ public class GuessNumberTest {
          } while (!answer.equals("no"));
     }
 
-    public static Player[] createPlayers() {
+    private static Player[] createPlayers() {
         Scanner scanner = new Scanner(System.in);
         int countPlayers;
         do {
