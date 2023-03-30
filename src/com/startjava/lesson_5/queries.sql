@@ -24,7 +24,7 @@ SELECT * FROM Jaegers WHERE kaijukill = (SELECT max(kaijukill) FROM Jaegers);
 SELECT avg(weight) FROM Jaegers;
 
 --increase by one quqntity of killed kaiju by not destroyed robots
-UPDATE Jaegers SET kaijukill = kaijukill + 1 WHERE NOT status = 'Destroyed';
+UPDATE Jaegers SET kaijukill = kaijukill + 1 WHERE status <> 'Destroyed';
 
 --delete destroyed robots
 DELETE FROM Jaegers WHERE status = 'Destroyed';

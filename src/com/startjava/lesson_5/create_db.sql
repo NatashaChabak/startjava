@@ -9,13 +9,13 @@ CREATE DATABASE java_start
 DROP TABLE IF EXISTS Jaegers; 
 
 --create table:
-CREATE TABLE Jaegers(
+CREATE TABLE Jaegers (
     id SERIAL PRIMARY KEY, 
     modelName VARCHAR(30),
-    mark  VARCHAR(25), 
+    mark VARCHAR(25), 
     height DECIMAL (7, 3),
     weight DECIMAL (7, 3),
-    status  VARCHAR(15),
+    status VARCHAR(15),
     origin VARCHAR(50),
     launch DATE,
     kaijuKill INTEGER
@@ -28,8 +28,7 @@ set client_encoding='WIN866';
 
 --run init & queries
 \ir init_db.sql
-
 \ir queries.sql 
 
 --run from console
---psql -U postgres -d java_start -f "C:\Users\n.zhitnikova\Downloads\cmder\StartJava\src\com\startjava\lesson_5\create_db.sql" -e -a
+--psql -U postgres -d java_start -f "create_db.sql" -e -a
