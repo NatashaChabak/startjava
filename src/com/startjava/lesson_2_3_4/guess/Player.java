@@ -15,22 +15,18 @@ public class Player {
         return name;
     }
 
-    public int getCounter() {
+    public int getAttempt() {
        return attempt;
     }
 
     public boolean addNum(int num, int min, int max) {
-        if (!checkNum(num, min, max)) {
+        if (num < min || num > max) {
             System.out.println("Введенное число вне интервала от " + min + " до " + max);
             return false;
         }
         enteredNums[attempt] = num;
         attempt++;
         return true;
-    }
-
-    public boolean checkNum(int num, int min, int max) {
-        return (num >= min && num <= max);
     }
 
     public int[] getEnteredNums() {

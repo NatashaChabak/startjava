@@ -12,15 +12,7 @@ public class GuessNumberTest {
         do {
             if (answer.equals("yes")) {
                 game.start();
-                for (Player player : players) {
-                    int[] enteredNums = player.getEnteredNums();
-                    System.out.print("Числа игрока " + player.getName() + ": ");
-                    for (int enteredNum : enteredNums) {
-                        System.out.print(enteredNum + " ");
-                    }
-                    System.out.println();
-                    player.clear();
-                }
+                game.finish();
             }
             System.out.print("Хотите продолжить игру? [yes/no] ");
             answer = scanner.nextLine();
